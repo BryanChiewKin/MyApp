@@ -60,7 +60,7 @@ export default function Calendar() {
                 <CardTitle>Calendar</CardTitle>
                 <CardDescription>These are the stats for the year.</CardDescription>
             </CardHeader>
-            <CardContent className='h-[400px] flex items-center w-full'>
+            <CardContent className='h-[200px] flex items-center w-full'>
                 <MyResponsiveTimeRange data={dataArray} />
             </CardContent>
         </Card>

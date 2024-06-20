@@ -7,8 +7,8 @@ import { TableDemo } from "@/components/Cards/Table";
 import { DataTableDemo } from "@/components/Cards/DataTable";
 
 export default function Home() {
-  return <div className="grid gap-[32px]">
-    <div className="grid grid-cols-2 gap-[32px]">
+  return <div className="grid gap-[32px] h-[500px]">
+    <div className="grid grid-cols-2 gap-[32px] h-[500px]">
       <General />
       <div className="grid gap-[32px]">
         <Calendar />
