@@ -56,7 +56,7 @@ export default function TeamSettings() {
             <div>
                 <div className="flex items-center justify-between gap-2">
                     <Command className="rounded-lg border">
-                        <CommandInput className="border-none" placeholder="Here's a slut to fuck tonight...
+                        <CommandInput className="border-none" placeholder="Search employee...
                         " />
                     </Command>
                     <Button variant="secondary">Add a new member</Button>

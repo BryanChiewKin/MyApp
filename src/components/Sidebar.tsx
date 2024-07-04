@@ -22,7 +22,7 @@ export default function Sidebar() {
                     text: "Profile"
                 },
                 {
-                    link: "/",
+                    link: "/inbox",
                     icon: <Inbox />,
                     text: "Inbox"
                 },
