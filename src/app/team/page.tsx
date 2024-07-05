@@ -1,5 +1,6 @@
 'use client';
-
+import { GetServerSideProps } from 'next';
+import { GetStaticProps } from 'next';
 import dynamic from "next/dynamic";
 import UserItem from 'useritem';
 import { useState } from "react";
@@ -22,6 +23,40 @@ type Member = {
     role: string;
     status?: string;
 }
+// Define the props for the component
+interface TeamPageProps {
+    team: Member[];
+  }
+
+  export const getStaticProps: GetStaticProps<TeamPageProps> = async () => {
+    try {
+      const res = await fetch('https://api.example.com/team');
+      if (!res.ok) {
+        throw new Error('Failed to fetch team data');
+      }
+      const team: Member[] = await res.json();
+      return { props: { team } };
+    } catch (error) {
+      console.error(error);
+      return { props: { team: [] } }; // Fallback to an empty array or handle error appropriately
+    }
+  };
+  
+
+export const getServerSideProps: GetServerSideProps<TeamPageProps> = async () => {
+    try {
+      const res = await fetch('https://api.example.com/team');
+      if (!res.ok) {
+        throw new Error('Failed to fetch team data');
+      }
+      const team: Member[] = await res.json();
+      return { props: { team } };
+    } catch (error) {
+      console.error(error);
+      return { props: { team: [] } }; // Fallback to an empty array or handle error appropriately
+    }
+  };
+
 export default function TeamSettings() {
     const [members, setMembers] = useState<Member[]>([
         {
